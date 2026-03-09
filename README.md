@@ -1,19 +1,18 @@
-## 🎉 Event Hub
+## Event Hub
 
-A modern full-stack Event Management platform where users can explore upcoming events, view event details, and authenticated users can add and manage events seamlessly.
+Live site: https://event-hub-puce-iota.vercel.app/
 
-## 🌐 Live Site: https://event-hub-puce-iota.vercel.app/
+## Overview
 
-## 🖼️ Project Overview
+Event Hub is a full-stack event management web application where visitors can browse upcoming events and view details, while authenticated users can create and manage events. The experience focuses on clear navigation, responsive layouts, and reliable data handling across the client and API.
 
-Event Hub is a full-stack web application designed to connect users with various events such as workshops, seminars, concerts, and community meetups. The platform allows visitors to browse events publicly, view detailed information, and authenticated users to create and manage events through a secure and user-friendly interface. The application ensures smooth navigation, responsive design, and reliable data handling using modern web technologies.
-
-## 🚀 Tech Stack
+## Tech Stack
 
 ### Frontend
-- Next.js 15/16 (App Router)
-- Firebase Authentication
+- Next.js (App Router)
+- React
 - Tailwind CSS
+- Firebase Authentication
 - React Hook Form
 - React Hot Toast
 
@@ -24,69 +23,32 @@ Event Hub is a full-stack web application designed to connect users with various
 - CORS
 - Dotenv
 
----
+## Core Features
 
-## ⭐ Main Features
+- Public event listing and detail pages
+- Authenticated event creation and management
+- Protected routes with Firebase Authentication
+- Toast notifications for key actions
+- Responsive layout for mobile, tablet, and desktop
 
-- 🔐 Firebase Authentication (Email/Password login)
-- 📅 Public Event Listing Page
-- 📄 Event Details Page (Dynamic Route)
-- ➕ Add New Event (Protected Route)
-- 🔒 Route Protection using Authentication
-- 🔔 Toast Notification on successful event creation
-- 🌐 Data fetched from Express API
-- 📸 Event cards with images and details
-- 📱 Fully Responsive UI (Mobile, Tablet, Desktop)
-- 🧭 Authentication persistence on page reload
-- ❌ Custom 404 Page
-- 🧭 Clean Navigation with Navbar & Footer
+## Authentication
 
----
+Firebase Authentication secures protected routes. Users can browse events anonymously, and sign in to create or manage events.
 
-## 📦 Dependencies
+## Environment Variables
 
-### Client
-- next
-- react
-- react-dom
-- firebase
-- react-hook-form
-- react-hot-toast
-- tailwindcss
+Sensitive values such as Firebase credentials and the MongoDB connection string are stored in environment variables.
 
-### Server
-- express
-- mongodb
-- cors
-- dotenv
+## Routes
 
----
+- `/` - Landing page
+- `/login` - Login page
+- `/events` - Event listing page
+- `/events/[id]` - Event detail page
+- `/add-event` - Protected add event page
 
-## 🔐 Authentication
+## Setup
 
-Firebase Authentication is used to handle user login and secure protected routes. Only authenticated users can access event creation features, while public users can browse and view event details without logging in.
-
----
-
-## 🧪 Environment Variables
-
-All sensitive information such as Firebase credentials and MongoDB URI are stored securely using environment variables.
-
----
-
-## 📌 Routes Summary
-
-- `/` → Landing Page  
-- `/login` → Login Page  
-- `/events` → Event Listing Page  
-- `/events/[id]` → Event Details Page  
-- `/add-event` → Protected Add Event Page  
-
----
-
-## 🛠️ Setup & Installation
-
-### Client
 ```bash
 git clone https://github.com/your-username/event-hub-client.git
 cd event-hub-client
