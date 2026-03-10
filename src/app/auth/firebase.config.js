@@ -2,18 +2,22 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
+// Firebase configuration should be sourced from env vars for safer config management.
 const firebaseConfig = {
-  apiKey: "AIzaSyCDL5Rca_KUl5JQwAXNmdB6JQpia84Ak5Y",
-  authDomain: "oishi-660af.firebaseapp.com",
-  projectId: "oishi-660af",
-  storageBucket: "oishi-660af.firebasestorage.app",
-  messagingSenderId: "135560629504",
-  appId: "1:135560629504:web:a8ce279a73d646a448b7e5"
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
+
+for (const key of requiredConfigKeys) {
+  if (!process.env[key]) {
+    throw new Error(`Missing required Firebase env var: ${key}`);
+  }
+}
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
